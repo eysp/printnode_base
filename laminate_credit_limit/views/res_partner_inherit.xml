@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_inherit_laminate" model="ir.ui.view">
+        <field name="name">res.partner.inherit.laminate</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <group name="accounting_entries" position="after">
+                <group string="Credit Limits" name="credit_limit">
+                    <field name="credit_hold"/>
+                    <field name="credit_override" readonly='1' />
+                    <field name="allotted_past_due"/>
+                </group>
+            </group>
+        </field>
+    </record>
+    <record id="res_partner_manager_inherit_laminate" model="ir.ui.view">
+        <field name="name">res.partner.manager.inherit.laminate</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="groups_id" eval="[(6, 0, [ref('sales_team.group_sale_manager')])]"/>
+        <field name="arch" type="xml">
+            <field name="credit_override" position="replace">
+                <field name="credit_override"/>
+            </field>
+        </field>
+    </record>
+</odoo>
