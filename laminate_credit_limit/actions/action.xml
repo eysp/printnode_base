@@ -9,8 +9,7 @@
         <field name="model_id" ref="base.model_res_partner"/>
         <field name="code">
 partners = env['res.partner'].search([])
-for rec in partners:
-    rec['credit_override'] = False
+partners.write({'credit_override': False})
         </field>
         <field name="state">code</field>
     </record>
