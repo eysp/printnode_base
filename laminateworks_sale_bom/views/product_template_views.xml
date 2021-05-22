@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- TEST CHANGE -->
         <record id="product_template_inherit_laminateworks" model="ir.ui.view">
             <field name="name">product.template.inherit.laminateworks</field>
             <field name="model">product.template</field>
