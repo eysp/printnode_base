@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- TEST CHANGE -->
         <record id="product_family_tree" model="ir.ui.view">
             <field name="name">product.family.tree</field>
             <field name="model">product.family</field>
