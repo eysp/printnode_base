@@ -14,7 +14,11 @@ class ReportBomStructure(models.AbstractModel):
         res['bom_price'] = bom_price
         total1 = sum(res.get('bom').bom_line_ids.mapped('x_studio_price_bom'))
         res['total1'] = total1
-        res['total2'] = total1 * sum(res.get('bom').bom_line_ids.mapped('product_qty'))
+        total2 = 0
+        for line in res.get('bom').bom_line_ids:
+            total2 += line.product_qty * line.x_studio_price_bom
+
+        res['total2'] = total2
 
         return res
 
