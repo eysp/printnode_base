@@ -13,4 +13,4 @@ class StockPicking(models.Model):
         for rec in self:
             if rec.credit_hold == True and rec.partner_id.credit_override == False and rec.picking_type_id.code == "outgoing":
                 raise ValidationError(_('Customer is under credit hold'))
-        super(StockPicking, self).button_validate()
+        return super(StockPicking, self).button_validate()

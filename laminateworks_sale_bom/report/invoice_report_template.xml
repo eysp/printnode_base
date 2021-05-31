@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document_inherit_sale_details" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='informations']" position="inside">
+            <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_line_ids.sale_line_ids.mapped('order_id')"
+                 name="order_date">
+                <strong>Order Date:</strong>
+                <p class="m-0" t-field="o.invoice_line_ids.sale_line_ids.mapped('order_id').date_order"/>
+            </div>
+            <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_line_ids.sale_line_ids.mapped('order_id').picking_ids[0].scheduled_date"
+                 name="scheduled_date">
+                <strong>Ship Date:</strong>
+                <p class="m-0" t-field="o.invoice_line_ids.sale_line_ids.mapped('order_id').picking_ids[0].scheduled_date"/>
+            </div>
+            <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_line_ids.sale_line_ids.mapped('order_id').customer_po"
+                 name="customer_po">
+                <strong>Customer Po:</strong>
+                <p class="m-0" t-field="o.invoice_line_ids.sale_line_ids.mapped('order_id').customer_po"/>
+            </div>
+            <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_line_ids.sale_line_ids.mapped('order_id').payment_term_id.name"
+                 name="payment_term">
+                <strong>Term:</strong>
+                <p class="m-0" t-field="o.invoice_line_ids.sale_line_ids.mapped('order_id').payment_term_id.name"/>
+            </div>
+            <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_line_ids.sale_line_ids.mapped('order_id').carrier_id.name"
+                 name="carrier">
+                <strong>Ship Via:</strong>
+                <p class="m-0" t-field="o.invoice_line_ids.sale_line_ids.mapped('order_id').carrier_id.name"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>
