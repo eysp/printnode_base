@@ -50,14 +50,14 @@
                                   t-options-widget="'date'"/>
                         </div>
                     </div>
-                    <div class='row'>
+                    <div class='row' t-if="o.invoice_line_ids.sale_line_ids.mapped('order_id').picking_ids.scheduled_date">
                         <div class='col-6 text-right'>
                             <span>
                                 <b>Ship Date:</b>
                             </span>
                         </div>
                         <div class='col-6 text-left'>
-                            <span t-field="o.invoice_line_ids.sale_line_ids.mapped('order_id').picking_ids[0].scheduled_date"
+                            <span t-field="o.invoice_line_ids.sale_line_ids.mapped('order_id').picking_ids.scheduled_date"
                                   t-options-widget="'date'"/>
                         </div>
                     </div>
