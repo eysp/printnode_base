@@ -11,7 +11,8 @@
                     <span t-if="o.move_type == 'out_refund'">Credit Note</span>
                     <span t-if="o.move_type == 'in_refund'">Vendor Credit Note</span>
                     <span t-if="o.move_type == 'in_invoice'">Vendor Bill</span>
-                    <span t-field="o.name"/>
+                    <t t-set="current_name" t-value="o.name[12:]"/>
+                    <span t-esc="current_name"/>
                 </div>
             </div>
         </xpath>
