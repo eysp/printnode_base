@@ -26,7 +26,6 @@
         'views/product_family_views.xml',
         'views/product_template_views.xml',
         'data/cron.xml',
-        'report/invoice_report_template.xml',
         'report/mrp_report_bom.xml'
     ],
     'installable': True,
