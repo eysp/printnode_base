@@ -17,7 +17,8 @@
         </xpath>
         <xpath expr="//div[@id='informations']" position="before">
             <div class="row">
-                <div class="col-6">
+                <!--<div class="col-6">-->
+                <div class="col-6" style="margin-left:25px">
                     <span>
                         <b>Bill to:</b>
                     </span>
@@ -28,7 +29,8 @@
                     <div t-field="o.invoice_line_ids.sale_line_ids.mapped('order_id').partner_shipping_id" t-options-widget="'contact'" t-options-fields="['name', 'address']" t-options-no_marker="True"/>
                 </div>
                 <!-- OTHER DATA COLUMN -->
-                <div class="col-6 text-center">
+                <!--<div class="col-6 text-center">-->
+				<div class="col-5 text-center">
                     <div class='row'>
                         <div class='col-6 text-right'>
                             <span>
