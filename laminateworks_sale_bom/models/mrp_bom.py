@@ -29,9 +29,10 @@ class MrpBom(models.Model):
             bom_weight = 0
             if rec.bom_line_ids:
                 for bom_line in rec.bom_line_ids:
-                    bom_weight += (bom_line.product_qty/quantity) * bom_line.weight
-            weight = quantity * bom_weight
-            rec.total_weight = str(weight) + " " + "kg"  
+                    bom_weight += bom_line.product_qty * bom_line.weight
+            # weight = quantity * bom_weight
+            weight = bom_weight
+            rec.total_weight = str(weight) + " " + "kg"
 
     def laminated_process(self, vals_list):
         values = []
