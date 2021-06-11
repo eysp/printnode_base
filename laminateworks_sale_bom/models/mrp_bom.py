@@ -19,7 +19,8 @@ class MrpBom(models.Model):
             total_cost = 0
             for line in bom.bom_line_ids:
                 if bom.bom_line_ids:
-                    total_cost += line.product_id.standard_price * line.product_qty
+                    # total_cost += line.product_id.standard_price * line.product_qty
+                    total_cost += line.x_studio_price_bom * line.product_qty
             bom.total_bom_cost = total_cost
 
     @api.depends('product_qty')
